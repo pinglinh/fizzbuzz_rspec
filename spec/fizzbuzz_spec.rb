@@ -1,15 +1,8 @@
-RSpec.configure do |config|
-	config.color_enabled = true
-	config.tty = true
-	config.formatter = :documentation
-end
-
-require "FizzBuzz"
+require 'FizzBuzz'
+require 'spec_helper'
 
 describe FizzBuzz do
-	context "print number" do
-	  it "1" do
-	  	expect(FizzBuzz).to eq(1)
-	  end
-	end
+  it 'if a number is divisible by 3' do
+  	expect(divisible_by_3).to eq("Fizz")
+  end
 end
