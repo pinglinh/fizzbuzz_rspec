@@ -2,27 +2,52 @@ require 'FizzBuzz'
 require 'spec_helper'
 
 describe FizzBuzz do
-  context 'when a number is divisible by' do
-  	let(:fizz_buzz) { FizzBuzz.new }
+  context 'when given a number' do
+    let(:fizz_buzz) { FizzBuzz.new }
 
-  	it '3 print Fizz' do
-  	  result = fizz_buzz.divisible_by(3)
-  	  expect(result).to eq("Fizz")
+    it 'returns Fizz when divisible by 3' do
+      result = fizz_buzz.divisible_by_three(3)
+      expect(result).to eq("Fizz")
     end
 
-    it '5 print Buzz' do
-  	  result = fizz_buzz.divisible_by(5)
-  	  expect(result).to eq("Buzz")
+    it 'returns the number when not divisible by 3' do
+      result = fizz_buzz.divisible_by_three(2)
+      expect(result).to eq(2)
     end
 
-    it '15 print FizzBuzz' do
-      result = fizz_buzz.divisible_by(15)
-      expect(result).to eq("FizzBuzz")
-    end 
-
-    it 'any other number' do
-    	result = fizz_buzz.divisible_by(1)
-    	expect(result).to eq(1)
+    it 'returns Buzz when divisible by 5' do
+     result = fizz_buzz.divisible_by_five(5)
+     expect(result).to eq("Buzz")
     end
-  end
+
+    it 'returns the number when not divisible by 5' do
+     result = fizz_buzz.divisible_by_five(1)
+     expect(result).to eq(1)
+    end
+
+    it 'returns FizzBuzz when divisible by 15' do
+     result = fizz_buzz.divisible_by_fifteen(15)
+     expect(result).to eq("FizzBuzz")
+    end
+
+    it 'returns the number when not divisible by 15' do
+     result = fizz_buzz.divisible_by_fifteen(2)
+     expect(result).to eq(2)
+    end
+
+    # # it '5 print Buzz' do
+     # #  result = fizz_buzz.divisible_by_five(5)
+     # #  expect(result).to eq("Buzz")
+    # # end
+
+    # # it '15 print FizzBuzz' do
+    # #   result = fizz_buzz.divisible_by_fifteen(15)
+    # #   expect(result).to eq("FizzBuzz")
+    # # end 
+
+    # # it 'any other number' do
+    # #   result = fizz_buzz.divisible_by_any_number(1)
+    # #   expect(result).to eq(1)
+    # end  
+  end             
 end
